@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA, CPA Calculator</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>GPA, CPA Calculator</h1>
+
+    <div class="form-box">
+        <h2>Đăng ký</h2>
+        <input type="text" id="registerUser" placeholder="Tên tài khoản">
+        <input type="password" id="registerPass" placeholder="Mật khẩu">
+        <button onclick="register()">Đăng ký</button>
+    </div>
+
+    <div class="form-box">
+        <h2>Đăng nhập</h2>
+        <input type="text" id="loginUser" placeholder="Tên tài khoản">
+        <input type="password" id="loginPass" placeholder="Mật khẩu">
+        <button onclick="login()">Đăng nhập</button>
+    </div>
+
+</div>
+
+<script>
+
+    let savedUser = ""
+    let savedPass = ""
+
+    function register() {
+
+        let user = document.getElementById("registerUser").value
+        let pass = document.getElementById("registerPass").value
+
+        if(user === "" || pass === ""){
+            alert("Vui lòng nhập đầy đủ thông tin")
+            return
+        }
+
+        savedUser = user
+        savedPass = pass
+
+        alert("Đăng ký thành công")
+    }
+
+    function login(){
+
+        let user = document.getElementById("loginUser").value
+        let pass = document.getElementById("loginPass").value
+
+        if(user === savedUser && pass === savedPass){
+            alert("Đăng nhập thành công")
+        }else{
+            alert("Sai rồi. Nhập lại")
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
